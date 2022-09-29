@@ -27,4 +27,12 @@ export default defineConfig({
       },
     ],
   },
+  server: {
+    proxy: {
+      '/demo': {
+        target: 'https://gateway.lizhi.io',
+        changeOrigin: true,
+      },
+    },
+  },
 });
