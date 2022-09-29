@@ -44,7 +44,7 @@ function PageLogin() {
         backgroundColor="#fff"
         boxShadow="0 0 20px 0 rgba(187,191,196,0.30);"
       >
-        <Heading mb={{ base: 3, md: 7 }} size="lg">
+        <Heading mb={{ base: 6, md: 7 }} size="lg">
           DIGITALYCHEE
         </Heading>
         {isLogin ? (
@@ -62,6 +62,13 @@ function PageLogin() {
           </>
         )}
       </Flex>
+      {!isPc ? (
+        <Center>
+          <Heading size="md" mt="25px">
+            登录
+          </Heading>
+        </Center>
+      ) : null}
     </Flex>
   );
 }

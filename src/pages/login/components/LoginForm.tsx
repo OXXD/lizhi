@@ -97,10 +97,18 @@ function LoginForm(props: Props) {
         </FormControl>
         <Button
           w="full"
-          colorScheme="messenger"
           type="submit"
           isLoading={isSubmitting}
           disabled={!isDirty}
+          bg="#3371FF"
+          color="#fff"
+          _hover={{ bg: 'messenger.600' }}
+          _disabled={{
+            backgroundColor: '#BBBFC4',
+            color: '#fff',
+            _hover: { bg: '#BBBFC4' },
+            cursor: 'not-allowed',
+          }}
         >
           下一步
         </Button>
