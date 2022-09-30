@@ -19,7 +19,3 @@ npm install
 ```sh
 npm run dev
 ```
-
-## 已知问题
-
-- 第一步登录接口 [https://gateway.lizhi.io/demo/login.php?phase=1](https://gateway.lizhi.io/demo/login.php?phase=1) 永远返回的是 Invalid username 无法获取到 `token`
