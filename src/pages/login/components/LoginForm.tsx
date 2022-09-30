@@ -26,7 +26,7 @@ type Props = {
 
 function LoginForm(props: Props) {
   const { onLogin } = props;
-  const [loginRes, setLoginRes] = useState<ResponseType<string>>();
+  const [loginRes, setLoginRes] = useState<ResponseType<{ token: string }>>();
 
   const {
     handleSubmit,
@@ -36,10 +36,12 @@ function LoginForm(props: Props) {
 
   const onSubmit = handleSubmit(async (values) => {
     try {
-      const res = (await (await login(values)).json()) as ResponseType<string>;
+      const res = (await (await login(values)).json()) as ResponseType<{
+        token: string;
+      }>;
       setLoginRes(res);
-      if (isResponseSuccess(res) && res?.data) {
-        setUserToken(res?.data);
+      if (isResponseSuccess(res) && res?.data?.token) {
+        setUserToken(res?.data.token);
         onLogin();
       }
     } catch (error) {
